@@ -1167,3 +1167,136 @@ body {
     height: 175px;
   }
 }
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.avatar-orbit {
+  position: relative;
+  width: 340px;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-frame {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 10px;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05), rgba(108,99,255,0.08));
+  box-shadow:
+    0 0 18px rgba(108,99,255,0.45),
+    0 0 40px rgba(108,99,255,0.28),
+    0 0 80px rgba(236,72,153,0.14);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: avatarGlow 3.5s ease-in-out infinite;
+}
+
+.photo-frame::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(108,99,255,0.32), rgba(236,72,153,0.22), rgba(59,130,246,0.22));
+  filter: blur(18px);
+  z-index: -1;
+  opacity: 0.85;
+  animation: haloPulse 4s ease-in-out infinite;
+}
+
+.photo-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.16);
+  pointer-events: none;
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(255,255,255,0.15);
+  box-shadow: 0 0 18px rgba(108,99,255,0.15);
+}
+
+.orbit-ring-1 {
+  inset: 0;
+  animation: orbitSpin 18s linear infinite;
+}
+
+.orbit-ring-2 {
+  inset: 24px;
+  border-style: solid;
+  border-color: rgba(108,99,255,0.22);
+  animation: orbitSpinReverse 12s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c63ff, #ec4899);
+  box-shadow: 0 0 12px rgba(108,99,255,0.9);
+  animation: floatDot 3.5s ease-in-out infinite;
+}
+
+.dot-1 { top: 24px; left: 70px; animation-delay: 0s; }
+.dot-2 { top: 70px; right: 18px; animation-delay: 0.7s; }
+.dot-3 { bottom: 52px; right: 34px; animation-delay: 1.4s; }
+.dot-4 { bottom: 30px; left: 86px; animation-delay: 2.1s; }
+
+@keyframes avatarGlow {
+  0%, 100% {
+    transform: translateY(0);
+    box-shadow:
+      0 0 18px rgba(108,99,255,0.45),
+      0 0 40px rgba(108,99,255,0.28),
+      0 0 80px rgba(236,72,153,0.14);
+  }
+  50% {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 24px rgba(108,99,255,0.62),
+      0 0 54px rgba(108,99,255,0.38),
+      0 0 95px rgba(236,72,153,0.20);
+  }
+}
+
+@keyframes haloPulse {
+  0%, 100% { transform: scale(1); opacity: 0.65; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes orbitSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbitSpinReverse {
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes floatDot {
+  0%, 100% { transform: translateY(0) scale(1); opacity: 0.75; }
+  50% { transform: translateY(-8px) scale(1.2); opacity: 1; }
+}
