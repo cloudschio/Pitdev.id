@@ -21,12 +21,29 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// ===== HAMBURGER =====
+// ===== HAMBURGER ANIMATED =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
-hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+// Tutup menu saat link diklik
 document.querySelectorAll('.nav-links a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('active'));
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+// Tutup menu saat klik di luar navbar
+document.addEventListener('click', (e) => {
+  if (!navbar.contains(e.target)) {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  }
 });
 
 // ===== TYPING ANIMATION =====
