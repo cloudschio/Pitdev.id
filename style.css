@@ -547,18 +547,40 @@ body {
 /* ===== NAV BRAND ANIMATED ===== */
 .nav-brand {
   flex-shrink: 0;
-  padding: 0.35rem 1.1rem;
-  border-radius: 50px;
-  border: 2px solid transparent;
-  background:
-    linear-gradient(var(--navbar-bg), var(--navbar-bg)) padding-box,
-    linear-gradient(90deg, #6c63ff, #a855f7, #3b82f6, #ec4899, #6c63ff) border-box;
-  background-size: 300% 300%;
-  animation: borderGradient 4s linear infinite;
+  padding: 0;
+  border: none;
+  background: transparent;
   position: relative;
-  overflow: hidden;
 }
 
+.nav-brand::before {
+  display: none;
+}
+
+/* Teks gradasi bergerak */
+.brand-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6c63ff, #a855f7, #ec4899, #3b82f6, #6c63ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: textGradient 4s linear infinite;
+  white-space: nowrap;
+  display: inline-block;
+}
+
+@keyframes textGradient {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.nav-brand:hover .brand-text {
+  filter: brightness(1.2);
+  transition: filter 0.3s ease;
+}
 /* Glow effect di belakang frame */
 .nav-brand::before {
   content: '';
