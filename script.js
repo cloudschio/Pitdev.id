@@ -80,7 +80,7 @@ form.addEventListener('submit', async (e) => {
   const message = document.getElementById('formMessage').value.trim();
 
   // Ganti URL ini dengan endpoint aktif (Formspree, EmailJS, dll)
-  const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+  const FORM_ENDPOINT = 'https://formspree.io/f/mykvalww';
 
   submitBtn.disabled = true;
   btnText.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Mengirim...';
