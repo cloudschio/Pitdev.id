@@ -473,3 +473,26 @@ body {
   .footer { padding: 1rem 5%; }
   .footer p { font-size: 0.72rem; }
 }
+/* ===== HERO TEXT — LIGHT MODE ===== */
+[data-theme="light"] .hero-greeting {
+  color: #1a1a2e;
+  text-shadow: 0 2px 12px rgba(108,99,255,0.2);
+}
+
+[data-theme="light"] .hero-name {
+  color: #1a1a2e;
+  text-shadow: 0 4px 20px rgba(108,99,255,0.2);
+}
+
+[data-theme="light"] .hero-role {
+  color: var(--primary);
+  text-shadow: none;
+}
+
+[data-theme="light"] .cursor {
+  color: var(--primary);
+}
+
+[data-theme="light"] .hero-desc {
+  color: #444460;
+}
