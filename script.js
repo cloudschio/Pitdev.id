@@ -46,10 +46,10 @@ document.addEventListener('click', (e) => {
 
 // ===== TYPING ANIMATION =====
 const roles = [
-  'Web Developer 💻',
-  'Mobile Developer 📱',
-  'UI/UX Enthusiast 🎨',
-  'Fintech Builder 💰'
+  'Graphic Designer',
+  'Freelancer',
+  'UI/UX Enthusiast',
+  'Digital Printing Operator'
 ];
 let roleIndex = 0, charIndex = 0, isDeleting = false;
 const typedText = document.getElementById('typedText');
