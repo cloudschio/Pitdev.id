@@ -414,3 +414,83 @@ body {
   .contact-form { padding: 1.2rem; }
   .nav-brand { font-size: 1.2rem; }
 }
+/* ===== ANIMATED GRADIENT BACKGROUND ===== */
+.bg-animated {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: var(--bg);
+  transition: background 0.4s;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  animation: orbMove 10s ease-in-out infinite alternate;
+}
+
+[data-theme="dark"] .gradient-orb { opacity: 0.3; }
+[data-theme="light"] .gradient-orb { opacity: 0.18; }
+
+.orb-1 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, #6c63ff, #a855f7);
+  top: -150px; left: -150px;
+  animation-duration: 10s;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, #3b82f6, #06b6d4);
+  bottom: -100px; right: -100px;
+  animation-duration: 13s;
+  animation-delay: -4s;
+}
+
+.orb-3 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, #ec4899, #f97316);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation-duration: 16s;
+  animation-delay: -8s;
+}
+
+@keyframes orbMove {
+  0%   { transform: translate(0, 0) scale(1); }
+  25%  { transform: translate(60px, -80px) scale(1.1); }
+  50%  { transform: translate(-40px, 60px) scale(0.95); }
+  75%  { transform: translate(80px, 40px) scale(1.05); }
+  100% { transform: translate(-60px, -40px) scale(1); }
+}
+
+/* Orb-3 override karena pakai transform sendiri */
+.orb-3 {
+  animation-name: orbMoveCenter;
+}
+@keyframes orbMoveCenter {
+  0%   { transform: translate(-50%, -50%) scale(1); }
+  33%  { transform: translate(-30%, -60%) scale(1.15); }
+  66%  { transform: translate(-65%, -40%) scale(0.9); }
+  100% { transform: translate(-50%, -55%) scale(1.05); }
+}
+
+/* Pastikan semua section punya background transparan */
+.hero {
+  background: transparent !important;
+}
+.section-alt, .footer {
+  background: rgba(0,0,0,0) !important;
+}
+[data-theme="light"] .section-alt,
+[data-theme="light"] .footer {
+  background: rgba(235,235,255,0.4) !important;
+}
+[data-theme="dark"] .section-alt,
+[data-theme="dark"] .footer {
+  background: rgba(22,33,62,0.5) !important;
+}
