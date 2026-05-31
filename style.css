@@ -703,3 +703,34 @@ body {
   object-position: center top;
   display: block;
 }
+.photo-frame {
+  animation: glowPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 18px rgba(108,99,255,0.55),
+      0 0 45px rgba(108,99,255,0.35),
+      0 0 80px rgba(236,72,153,0.18);
+  }
+  50% {
+    box-shadow:
+      0 0 24px rgba(108,99,255,0.75),
+      0 0 60px rgba(108,99,255,0.45),
+      0 0 100px rgba(236,72,153,0.24);
+  }
+}
+@media (max-width: 767px) {
+  .photo-frame {
+    width: 190px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 400px) {
+  .photo-frame {
+    width: 160px;
+    height: 160px;
+  }
+}
