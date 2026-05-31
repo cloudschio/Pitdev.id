@@ -281,42 +281,106 @@ body {
   background: var(--primary); color: #fff; transform: translateX(5px);
 }
 
-/* FORM */
+/* ===== CONTACT FORM (UPDATED) ===== */
 .contact-form {
-  background: var(--card); border-radius: 16px; padding: 2rem;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 2rem;
   border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
 }
-.contact-form h3 { color: var(--white); margin-bottom: 1.5rem; font-size: 1.1rem; }
-.form-group { position: relative; margin-bottom: 1.5rem; }
+
+.contact-form h3 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.8rem;
+}
+
+/* Label melayang di atas */
+.form-group label {
+  position: absolute;
+  left: 1rem;
+  top: -0.65rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--card);
+  padding: 0 0.4rem;
+  letter-spacing: 0.4px;
+  border-radius: 4px;
+}
+
 .form-group input,
 .form-group textarea {
-  width: 100%; padding: 0.85rem 1rem;
-  background: var(--input-bg); border: 1px solid var(--border);
-  border-radius: 10px; color: var(--text);
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: var(--input-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
   font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem; transition: var(--transition);
-  outline: none; resize: vertical;
+  font-size: 0.95rem;        /* lebih besar dari sebelumnya */
+  font-weight: 400;
+  line-height: 1.6;
+  transition: var(--transition);
+  outline: none;
+  resize: vertical;
 }
+
+/* Placeholder lebih kontras */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  opacity: 0.85;
+}
+
 .form-group input:focus,
 .form-group textarea:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(108,99,255,0.15);
+  box-shadow: 0 0 0 4px rgba(108,99,255,0.18);
+  background: var(--input-bg);
 }
-.form-group label {
-  position: absolute; left: 1rem; top: -0.6rem;
-  font-size: 0.72rem; color: var(--primary);
-  background: var(--card); padding: 0 0.3rem;
+
+/* Highlight border saat hover */
+.form-group input:hover,
+.form-group textarea:hover {
+  border-color: rgba(108,99,255,0.5);
 }
-.form-status { margin-top: 1rem; font-size: 0.88rem; text-align: center; min-height: 1.4rem; }
+
+/* Textarea min height */
+.form-group textarea {
+  min-height: 110px;
+}
+
+/* Submit button full width */
+.contact-form .btn-primary {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.9rem;
+  letter-spacing: 0.3px;
+  margin-top: 0.5rem;
+}
+
+.form-status {
+  margin-top: 1rem;
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: center;
+  min-height: 1.4rem;
+  letter-spacing: 0.2px;
+}
 .form-status.success { color: #4caf50; }
-.form-status.error { color: #f44336; }
-
-/* ===== FOOTER ===== */
-.footer {
-  background: var(--bg-alt); text-align: center;
-  padding: 1.5rem 5%; color: var(--text-muted); font-size: 0.85rem;
-}
-
+.form-status.error   { color: #f44336; }
 /* ================================================
    RESPONSIVE BREAKPOINTS
    ================================================ */
