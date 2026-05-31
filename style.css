@@ -628,3 +628,69 @@ body {
     linear-gradient(var(--navbar-bg), var(--navbar-bg)) padding-box,
     linear-gradient(90deg, #6c63ff, #a855f7, #3b82f6, #ec4899, #6c63ff) border-box;
 }
+/* ===== NAVBAR FIX ===== */
+.navbar {
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 1rem 5% !important;
+  background: var(--navbar-bg) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid var(--border) !important;
+  z-index: 1000 !important;
+}
+
+.navbar.scrolled {
+  padding: 0.6rem 5% !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* ===== NAV BRAND FIX ===== */
+.nav-brand {
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--primary) !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Pastikan tidak ada brand-text yang aktif */
+.brand-text {
+  font-size: inherit;
+  font-weight: inherit;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+  animation: none !important;
+  color: var(--primary) !important;
+}
+
+/* ===== HERO BUTTON FIX ===== */
+[data-theme="dark"] .hero-buttons .btn-outline {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  background: transparent !important;
+}
+
+[data-theme="dark"] .hero-buttons .btn-outline:hover {
+  background: #ffffff !important;
+  color: var(--primary) !important;
+}
+
+[data-theme="light"] .hero-buttons .btn-outline {
+  border: 2px solid var(--primary) !important;
+  color: var(--primary) !important;
+  background: rgba(108,99,255,0.08) !important;
+}
+
+[data-theme="light"] .hero-buttons .btn-outline:hover {
+  background: var(--primary) !important;
+  color: #ffffff !important;
+}
