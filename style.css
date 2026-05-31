@@ -558,3 +558,42 @@ body {
 [data-theme="dark"] .footer {
   background: rgba(22,33,62,0.5) !important;
 }
+/* ===== HERO TEXT ===== */
+.hero-greeting {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 2px 12px rgba(108,99,255,0.4);
+}
+
+.hero-name {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  text-shadow: 0 4px 20px rgba(108,99,255,0.5);
+}
+
+.hero-role {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  min-height: 2.2rem;
+  color: #ffffff;          /* ← typing text putih */
+  text-shadow: 0 2px 12px rgba(255,255,255,0.2);
+}
+
+/* Kursor typing tetap putih */
+.cursor {
+  color: #ffffff;
+  animation: blink 0.8s infinite;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+.hero-desc {
+  color: rgba(255, 255, 255, 0.75);   /* putih sedikit transparan */
+  max-width: 500px;
+  margin-bottom: 2rem;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+}
