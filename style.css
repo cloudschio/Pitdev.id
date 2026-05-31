@@ -616,3 +616,16 @@ body {
   border-radius: 50%;
   display: block;
 }
+@media (max-width: 767px) {
+  .photo-frame {
+    width: 250px;
+    height: 310px;
+  }
+}
+
+@media (max-width: 400px) {
+  .photo-frame {
+    width: 220px;
+    height: 280px;
+  }
+}
