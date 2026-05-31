@@ -727,8 +727,36 @@ body {
     height: 190px;
   }
 }
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6c63ff, #a855f7, #ec4899, #3b82f6, #6c63ff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: brandGradientMove 5s linear infinite, brandGlow 2.8s ease-in-out infinite;
+  flex-shrink: 0;
+  position: relative;
+  text-shadow: 0 0 10px rgba(108,99,255,0.25);
+}
 
-@media (max-width: 400px) {
+@keyframes brandGradientMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes brandGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(108,99,255,0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 10px rgba(236,72,153,0.5));
+  }
+}
+@m[data-theme="light"] .nav-brand {
+  text-shadow: 0 0 8px rgba(108,99,255,0.18);
+}edia (max-width: 400px) {
   .photo-frame {
     width: 160px;
     height: 160px;
